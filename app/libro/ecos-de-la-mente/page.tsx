@@ -79,7 +79,7 @@ export default function BookPage() {
                                 <div className={styles.meta}>
                                     <span>{bookData.format}</span>
                                     <span>•</span>
-                                    <span>{bookData.pages} líneas</span>
+                                    <span>{bookData.pages} páginas</span>
                                     <span>•</span>
                                     <span>{bookData.stories.length} relatos</span>
                                 </div>

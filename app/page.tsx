@@ -89,7 +89,7 @@ export default function Home() {
                     Leer más
                   </Button>
                   <Button
-                    href="https://www.amazon.com/dp/[TU-ASIN]"
+                    href="https://www.amazon.com/dp/B0GGJ2H1TD"
                     variant="secondary"
                     external
                   >
