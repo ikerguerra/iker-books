@@ -1,6 +1,19 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import "../styles/globals.css";
+import type { Metadata } from 'next';
+import { Inter, JetBrains_Mono } from 'next/font/google';
+import '../styles/globals.css';
+import { GoogleAnalytics } from '@next/third-parties/google';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-body',
+  display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
@@ -10,11 +23,13 @@ export const metadata: Metadata = {
   },
   description: 'Autor de terror psicológico y ciencia ficción distópica. Explora universos donde la realidad se fractura y la mente humana enfrenta sus límites más oscuros.',
   keywords: [
+    'Iker Guerra',
     'terror psicológico',
     'ciencia ficción distópica',
-    'autor español',
-    'Kindle Unlimited',
-    'relatos de terror',
+    'microrelatos de terror',
+    'Ecos de la mente',
+    'literatura de horror',
+    'espacios liminales',
     'horror tecnológico',
     'thriller psicológico'
   ],
@@ -54,6 +69,9 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
 };
 
 export default function RootLayout({
@@ -62,17 +80,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-          rel="stylesheet"
-        />
       </head>
       <body>
         {children}
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} />
+        )}
       </body>
     </html>
   );
