@@ -1,0 +1,47 @@
+{
+  "slug": "ecos-de-la-mente",
+  "title": "Ecos de la mente",
+  "subtitle": "Relatos de terror psicológico",
+  "genre": "Terror Psicológico",
+  "metaDescription": "Cinco relatos de terror psicológico que exploran los límites de la realidad, la vigilancia tecnológica y los espacios imposibles. Disponible en Kindle Unlimited.",
+  "synopsis": "Cinco microhistorias que te sumergirán en universos donde la realidad se fractura y la mente humana enfrenta sus límites más oscuros.\n\nDesde una estación de vigilancia donde el sistema lo registra todo hasta una urbanización perfecta que oculta un horror sintético, pasando por una plataforma marina donde el tiempo se repite en bucles infinitos, un apartamento donde los sonidos ocurren antes que las acciones, y una casa familiar donde las paredes guardan secretos que nunca debieron ser descubiertos.\n\nCada relato es una exploración del terror psicológico contemporáneo: la vigilancia omnipresente, la pérdida de identidad, el aislamiento extremo, la causalidad rota y la culpa que corroe desde dentro.",
+  "stories": [
+    {
+      "title": "Sincronización Completa",
+      "description": "En el complejo Aeterna, la realidad es lo que el sistema dice que es. Pero cuando los recuerdos empiezan a no coincidir con los registros digitales, ¿quién tiene razón: la memoria biológica o el servidor?"
+    },
+    {
+      "title": "La simetría de los geranios",
+      "description": "La urbanización Las Terrazas es el lugar perfecto para vivir. Demasiado perfecto. Cuando David descubre que sus vecinos no son lo que parecen, ya es demasiado tarde para escapar del decorado."
+    },
+    {
+      "title": "Protocolo de Aguas Muertas",
+      "description": "Mil quinientos días en una estación marina aislada. El mismo barco pasa una y otra vez. El mismo café amargo. La misma rutina. Hasta que el operador descubre que él también se repite."
+    },
+    {
+      "title": "Intervalo",
+      "description": "Los sonidos empiezan a ocurrir antes que las acciones que los causan. Un desfase de segundos que se convierte en minutos, luego en horas. Y cuando escuchas pasos que aún no has dado, ¿puedes elegir no darlos?"
+    },
+    {
+      "title": "El tabique",
+      "description": "Julián regresa a la casa familiar después de veinte años. Una mancha gris en la pared del pasillo se niega a desaparecer. Detrás del tabique, algo espera. Algo que lleva su nombre y su rostro."
+    }
+  ],
+  "excerpt": "La habitación 404 del complejo Aeterna olía a ozono y a limpiador de pino barato. Era una mezcla olfativa diseñada para evocar naturaleza, pero que solo conseguía recordar a un bosque sintético, de esos que proyectan en los vestíbulos de los aeropuertos.\n\nMe desperté con el zumbido. Siempre empezaba antes de que abriera los ojos, una vibración baja en la base del cráneo, justo donde el implante se conectaba con el nervio. Abrí los ojos. El techo era blanco, liso, sin imperfecciones. En la esquina superior derecha, la lente negra de la unidad de vigilancia giró un milímetro.\n\nEl motor era silencioso, pero yo lo sentía. O quizás, recordaba el sonido de una vida anterior y lo superponía al silencio.",
+  "coverImage": "/Portada_ecos_de_la_mente_relatos_de_terror_psicologico.png",
+  "amazonUrl": "https://www.amazon.com/dp/[TU-ASIN]",
+  "format": "eBook",
+  "pages": 625,
+  "language": "es",
+  "publishDate": "2024",
+  "keywords": [
+    "terror psicológico",
+    "ciencia ficción distópica",
+    "horror tecnológico",
+    "relatos cortos",
+    "thriller psicológico",
+    "distopía",
+    "vigilancia",
+    "realidad simulada"
+  ]
+}
