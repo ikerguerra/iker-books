@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import '../styles/globals.css';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -81,6 +81,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+      {process.env.NEXT_PUBLIC_GTM_ID && (
+        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
+      )}
       <head>
       </head>
       <body>
