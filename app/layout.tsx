@@ -18,10 +18,13 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   title: {
-    default: 'Iker Guerra - Terror Psicológico y Ciencia Ficción Distópica',
+    default: 'Iker Guerra | Terror Psicológico y Ciencia Ficción Distópica',
     template: '%s | Iker Guerra'
   },
   description: 'Autor de terror psicológico y ciencia ficción distópica. Explora universos donde la realidad se fractura y la mente humana enfrenta sus límites más oscuros.',
+  alternates: {
+    canonical: './',
+  },
   keywords: [
     'Iker Guerra',
     'terror psicológico',

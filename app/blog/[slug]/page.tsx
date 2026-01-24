@@ -28,6 +28,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         description: post.description,
         keywords: post.keywords,
         authors: [{ name: post.author }],
+        alternates: {
+            canonical: `/blog/${slug}`,
+        },
         openGraph: {
             title: post.title,
             description: post.description,
@@ -75,11 +78,40 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         image: post.image,
     };
 
+    const breadcrumbSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Inicio',
+                item: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ikerguerra.com',
+            },
+            {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Blog',
+                item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ikerguerra.com'}/blog`,
+            },
+            {
+                '@type': 'ListItem',
+                position: 3,
+                name: post.title,
+                item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ikerguerra.com'}/blog/${post.slug}`,
+            },
+        ],
+    };
+
     return (
         <>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
             <Header />
             <main className={styles.main}>

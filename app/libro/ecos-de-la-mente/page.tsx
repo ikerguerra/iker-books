@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     title: `${bookData.title} - ${bookData.genre}`,
     description: bookData.metaDescription,
     keywords: bookData.keywords,
+    alternates: {
+        canonical: '/libro/ecos-de-la-mente',
+    },
     openGraph: {
         title: bookData.title,
         description: bookData.metaDescription,
@@ -50,11 +53,34 @@ export default function BookPage() {
         keywords: bookData.keywords.join(', '),
     };
 
+    const breadcrumbSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Inicio',
+                item: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ikerguerra.com',
+            },
+            {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Libro',
+                item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ikerguerra.com'}/libro/ecos-de-la-mente`,
+            },
+        ],
+    };
+
     return (
         <>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(bookSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
             <Header />
             <main className={styles.main}>
