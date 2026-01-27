@@ -3,7 +3,7 @@ import fs from 'fs'
 import path from 'path'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ikerguerra.com').replace(/\/$/, '')
+    const baseUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://iker-books.vercel.app').replace(/\/$/, '')
 
     // Static pages
     const staticPages: MetadataRoute.Sitemap = [
@@ -62,7 +62,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
                     url: `${baseUrl}/blog/${slug}`,
                     lastModified: new Date(),
                     changeFrequency: 'monthly' as const,
-                    priority: 0.7,
+                    priority: 0.8,
                 }
             })
     } catch (error) {

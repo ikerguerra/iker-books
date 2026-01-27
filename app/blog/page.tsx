@@ -13,6 +13,9 @@ export const metadata: Metadata = {
         title: 'Blog - Iker Guerra',
         description: 'Exploraciones sobre terror psicológico y narrativa distópica',
     },
+    alternates: {
+        canonical: 'https://iker-books.vercel.app/blog',
+    },
 };
 
 export default function BlogPage() {

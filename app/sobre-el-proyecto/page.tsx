@@ -11,6 +11,9 @@ export const metadata: Metadata = {
         title: 'Sobre el proyecto - Iker Guerra',
         description: 'La visión creativa detrás del terror psicológico',
     },
+    alternates: {
+        canonical: 'https://iker-books.vercel.app/sobre-el-proyecto',
+    },
 };
 
 export default function AboutPage() {

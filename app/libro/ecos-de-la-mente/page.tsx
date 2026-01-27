@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: bookData.metaDescription,
     keywords: bookData.keywords,
     alternates: {
-        canonical: '/libro/ecos-de-la-mente',
+        canonical: 'https://iker-books.vercel.app/libro/ecos-de-la-mente',
     },
     openGraph: {
         title: bookData.title,
@@ -61,13 +61,13 @@ export default function BookPage() {
                 '@type': 'ListItem',
                 position: 1,
                 name: 'Inicio',
-                item: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ikerguerra.com',
+                item: process.env.NEXT_PUBLIC_SITE_URL || 'https://iker-books.vercel.app',
             },
             {
                 '@type': 'ListItem',
                 position: 2,
                 name: 'Libro',
-                item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ikerguerra.com'}/libro/ecos-de-la-mente`,
+                item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://iker-books.vercel.app'}/libro/ecos-de-la-mente`,
             },
         ],
     };

@@ -5,11 +5,11 @@ export const Header = () => {
     return (
         <header className={styles.header}>
             <div className={styles.container}>
-                <Link href="/" className={styles.logo}>
+                <Link href="/" className={styles.logo} aria-label="Iker Guerra - Inicio">
                     <span className={styles.logoText}>Iker Guerra</span>
                 </Link>
 
-                <nav className={styles.nav}>
+                <nav className={styles.nav} aria-label="Navegación principal">
                     <Link href="/" className={styles.navLink}>
                         Inicio
                     </Link>

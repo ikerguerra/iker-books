@@ -63,6 +63,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         notFound();
     }
 
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://iker-books.vercel.app';
+
     // Schema markup for Article
     const articleSchema = {
         '@context': 'https://schema.org',
@@ -72,10 +74,20 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         author: {
             '@type': 'Person',
             name: post.author,
+            url: siteUrl
+        },
+        publisher: {
+            '@type': 'Person',
+            name: 'Iker Guerra',
+            url: siteUrl
         },
         datePublished: post.date,
         keywords: post.keywords.join(', '),
-        image: post.image,
+        image: `${siteUrl}${post.image}`,
+        mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `${siteUrl}/blog/${post.slug}`
+        }
     };
 
     const breadcrumbSchema = {
@@ -86,19 +98,19 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 '@type': 'ListItem',
                 position: 1,
                 name: 'Inicio',
-                item: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ikerguerra.com',
+                item: siteUrl,
             },
             {
                 '@type': 'ListItem',
                 position: 2,
                 name: 'Blog',
-                item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ikerguerra.com'}/blog`,
+                item: `${siteUrl}/blog`,
             },
             {
                 '@type': 'ListItem',
                 position: 3,
                 name: post.title,
-                item: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ikerguerra.com'}/blog/${post.slug}`,
+                item: `${siteUrl}/blog/${post.slug}`,
             },
         ],
     };

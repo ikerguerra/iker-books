@@ -6,8 +6,42 @@ import Image from 'next/image';
 import styles from './page.module.css';
 
 export default function Home() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://iker-books.vercel.app';
+
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Iker Guerra - Autor',
+    url: siteUrl,
+    description: 'Autor de terror psicológico y ciencia ficción distópica',
+    publisher: {
+      '@type': 'Person',
+      name: 'Iker Guerra'
+    }
+  };
+
+  const personSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Iker Guerra',
+    url: siteUrl,
+    jobTitle: 'Escritor',
+    sameAs: [
+      'https://www.amazon.com/author/ikerguerra'
+    ],
+    description: 'Autor especializado en terror psicológico y ciencia ficción distópica.'
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       <Header />
       <main>
         {/* Hero Section */}
