@@ -23,13 +23,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         };
     }
 
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://iker-books.vercel.app';
+
     return {
         title: post.title,
         description: post.description,
         keywords: post.keywords,
         authors: [{ name: post.author }],
         alternates: {
-            canonical: `/blog/${slug}`,
+            canonical: `${siteUrl}/blog/${slug}`,
         },
         openGraph: {
             title: post.title,
